@@ -1,7 +1,7 @@
 FROM alpine
 
-RUN apk update && apk add apache-ant openjdk8 git
-RUN git clone https://github.com/enasequence/cramtools.git
+RUN apk update && apk add apache-ant openjdk8
+ADD . /cramtools/
 WORKDIR cramtools
 RUN ant -f build/build.xml runnable
 
